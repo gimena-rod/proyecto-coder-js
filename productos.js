@@ -1,6 +1,6 @@
 let productoIds= 0;
 const productosStorage = localStorage.getItem('productos');
-const productos = JSON.parse(productosStorage);
+const productos = JSON.parse(productosStorage) ?? [];
 // localStorage.setItem('productos', JSON.stringify(productos));
 
 const sectionListaProductos = document.getElementById("listaProductos");
