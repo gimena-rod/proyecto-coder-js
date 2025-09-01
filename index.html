@@ -1,12 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Carrito</title>
 </head>
 <body>
-    
+    <main>
+        <h1>Simulador de carrito de compras</h1>
+        <section>
+            <form action="" id="nuevoCliente">
+                <label for="clientname">Ingresar nombre del cliente</label>
+                <input type="text" name='clientname' id="clientname">
+                <span id="error-cliente"></span>
+                <span class="success" id="cliente-guardado"></span>
+                <button class="btn btn-primary" type="submit">Aceptar</button>
+            </form>
+        </section>
+        <section>
+            <h2>Añadir Nuevo Producto</h2>
+            <form action="" id="nuevoProducto">
+                <span id="error-producto"></span>
+                <label for="nombreProducto">Nombre del producto</label>           
+                <input id="nombreProducto" name="nombreProducto" type="text">
+                <label for="precio">precio</label>
+                <input id="precio" name="precio" type="number">
+                <label for="stock">stock</label>
+                <input id="stock" name="stock" type="number">
+                 <button class="btn btn-primary" type="submit">Guardar</button>
+            </form>
+        </section>
+        <section>
+            <h2>Lista de productos</h2>
+            <div>
+                <label for="buscar">Buscar producto</label>
+                <input type="text" name="buscar" id="buscar" oninput="buscarProducto()">
+            </div>
+            <div >
+                <span id="error-carrito"></span>
+                <table>
+                    <thead >
+                        <tr>
+                            <th class="color-red">Nombre</th>
+                            <th>Precio</th>
+                            <th>stock</th>
+                            <th>accion</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaProductos">
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tu Carrito</h2>
+            <!-- <div>
+                <label for="buscar">buscar producto</label>
+                <input type="text" name="buscar" id="buscar" oninput="buscarProducto()">
+            </div> -->
+            <span id="error-carrito-cliente"></span>
+            <div >
+                <table >
+                    <thead >
+                        <tr>
+                            <th class="color-red">Nombre</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th> </th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="carritoProductos">
+
+                    </tbody>
+
+                    <tfoot id="carritoTotal">
+                        
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+    </main>
 </body>
-<script src="./carrito.js"> </script>
+    <script src="./productos.js"></script>
 </html>
